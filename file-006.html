@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="public/pf.png">
+    <title>FILE 006 — MAXIMAL EXTRACTABLE VALUE (MEV) & ALLEGED FRONT-RUNNING | ALONFILES</title>
+    <meta name="description"
+        content="Technical documentation of MEV practices on Solana and allegations of front-running in Pump.fun memecoin launches.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="file-detail.css">
+</head>
+
+<body>
+    <!-- Top Navigation -->
+    <nav class="top-bar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">ALONFILES</a>
+            <div class="nav-links">
+                <a href="index.html#files" class="nav-link">FILES</a>
+                <span class="nav-separator">·</span>
+                <a href="index.html#timeline" class="nav-link">TIMELINE</a>
+                <span class="nav-separator">·</span>
+                <a href="index.html#legal" class="nav-link">LEGAL</a>
+                <span class="nav-separator">·</span>
+                <a href="index.html#about" class="nav-link">ABOUT</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- File Header -->
+    <section class="file-header">
+        <div class="file-header-content">
+            <div class="file-classification">CLASSIFIED: PUBLIC RECORD — TECHNICAL & LEGAL</div>
+            <h1 class="file-number-large">FILE 006</h1>
+            <h2 class="file-title-large">MAXIMAL EXTRACTABLE VALUE (MEV) & ALLEGED FRONT-RUNNING</h2>
+            <div class="file-meta">
+                <span class="file-meta-item">COMPILED: JANUARY 2026</span>
+                <span class="file-separator">·</span>
+                <span class="file-meta-item">STATUS: ACTIVE LITIGATION</span>
+                <span class="file-separator">·</span>
+                <span class="file-meta-item">SOURCES: 6 VERIFIED</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- File Content -->
+    <article class="file-content">
+        <div class="content-container">
+
+            <!-- Subject Section -->
+            <section class="content-section">
+                <h3 class="section-label">SUBJECT</h3>
+                <div class="subject-name">Maximal Extractable Value (MEV) Practices</div>
+                <p class="subject-detail">On Solana blockchain in context of Pump.fun memecoin launches; allegations
+                    centered on Jito Labs infrastructure and alleged coordination with Pump.fun / Solana entities</p>
+            </section>
+
+            <!-- Technical Explanation -->
+            <section class="content-section">
+                <h3 class="section-label">MEV TECHNICAL EXPLANATION (NEUTRAL DEFINITION)</h3>
+
+                <div class="technical-definition">
+                    <span class="definition-term">Maximal Extractable Value (MEV)</span>
+                    <p>Additional profit block producers (validators) or third parties can capture by reordering,
+                        including, or excluding transactions within a block beyond standard block rewards and fees.</p>
+                </div>
+
+                <div class="mechanics-subsection">
+                    <h4 class="subsection-title">MEV on Solana</h4>
+                    <ul class="mechanics-list">
+                        <li>High-throughput architecture enables rapid transaction processing</li>
+                        <li>MEV manifests via transaction ordering advantages in mempool/leader schedule</li>
+                    </ul>
+                </div>
+
+                <div class="mechanics-subsection">
+                    <h4 class="subsection-title">Jito Labs Role</h4>
+                    <div class="technical-definition">
+                        <p>Provides validator client (Jito-Solana) with bundle auction system:</p>
+                        <ul class="mechanics-list">
+                            <li><strong>Searchers</strong> submit atomic bundles (up to 5 transactions) with tips
+                                (priority fees) to validators via off-chain auction</li>
+                            <li><strong>Winning bundles</strong> prioritized for inclusion based on tip amount</li>
+                            <li><strong>Reduces spam</strong>, reallocates MEV to validators/stakers via tips</li>
+                            <li><strong>Jito retains portion</strong> (e.g., 5-6% historically reported)</li>
+                            <li><strong>Bundles execute atomically</strong> (all-or-nothing); enables strategies like
+                                arbitrage/backrunning without partial failure risk</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Confirmed Infrastructure -->
+            <section class="content-section">
+                <h3 class="section-label">CONFIRMED INFRASTRUCTURE ATTRIBUTES</h3>
+                <ul class="mechanics-list">
+                    <li>Jito infrastructure widely used on Solana for MEV optimization (bundles, tips, block engine)
+                    </li>
+                    <li>Integrated in validator clients running Jito-Solana</li>
+                    <li>Pump.fun operates on Solana</li>
+                    <li>Memecoin launches involve high initial volatility and thin liquidity, making transaction
+                        ordering sensitive</li>
+                </ul>
+            </section>
+
+            <!-- Legal Context -->
+            <section class="content-section">
+                <h3 class="section-label">LEGAL CONTEXT</h3>
+
+                <div class="case-header">
+                    <div class="case-caption">Aguilar v. Baton Corporation Ltd. d/b/a Pump.Fun et al.</div>
+                    <div class="case-number">No. 1:25-cv-00880-CM (SDNY)</div>
+                    <div class="case-type">MEV-Related Claims</div>
+                </div>
+
+                <div class="timeline-entry-detail">
+                    <div class="timeline-date-detail">JULY 2025</div>
+                    <div class="timeline-event">
+                        <h4 class="event-title">MEV Claims Added</h4>
+                        <p class="event-description">Consolidated Amended Complaint includes MEV-related allegations</p>
+                        <p class="event-description">Jito Labs, Inc. and Jito Foundation named as defendants</p>
+                        <a href="https://hodder.law/pumpfun-solana-jito-lawsuit-2025" target="_blank"
+                            rel="noopener noreferrer" class="source-link">Source: [2]</a>
+                    </div>
+                </div>
+
+                <div class="timeline-entry-detail">
+                    <div class="timeline-date-detail">SEPTEMBER/OCTOBER 2025</div>
+                    <div class="timeline-event">
+                        <h4 class="event-title">Jito Labs Voluntary Dismissal</h4>
+                        <p class="event-description">Voluntary dismissal without prejudice</p>
+                        <p class="event-description">No settlement or admission documented</p>
+                        <a href="https://www.skadden.com/about/news-and-rankings/news/2025/10/crypto-developer-jito-labs-wins-dismissal-of-class-action"
+                            target="_blank" rel="noopener noreferrer" class="source-link">Source: [6]</a>
+                    </div>
+                </div>
+
+                <div class="timeline-entry-detail">
+                    <div class="timeline-date-detail">DECEMBER 9, 2025</div>
+                    <div class="timeline-event">
+                        <h4 class="event-title">Court Permits New Evidence</h4>
+                        <p class="event-description">Second Amended Complaint permitted with incorporation of new
+                            evidence</p>
+                        <p class="event-description">Plaintiffs reference internal communications (reported as >5,000
+                            chat logs from whistleblower/confidential informant)</p>
+                        <p class="event-description">Alleged coordination among Pump.fun staff, Solana engineers, and
+                            Jito-related parties on transaction advantages</p>
+                        <a href="https://www.courtlistener.com/docket/69593359/aguilar-v-baton-corporation-ltd-dba-pumpfun"
+                            target="_blank" rel="noopener noreferrer" class="source-link">Source: [3]</a>
+                    </div>
+                </div>
+
+                <div class="timeline-entry-detail">
+                    <div class="timeline-date-detail">DECEMBER 18-19, 2025</div>
+                    <div class="timeline-event">
+                        <h4 class="event-title">Whistleblower Chat Logs Reported</h4>
+                        <p class="event-description">5,000+ secret chat logs allegedly dropped by whistleblower</p>
+                        <p class="event-description">Purportedly show discussions of MEV tooling integration, bundle
+                            usage, and prioritization advantages</p>
+                        <a href="https://finance.yahoo.com/news/whistleblower-drops-5-000-secret-210125260.html"
+                            target="_blank" rel="noopener noreferrer" class="source-link">Source: [5]</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Allegations -->
+            <section class="content-section">
+                <h3 class="section-label">ALLEGATIONS</h3>
+                <p class="legal-disclaimer">Per plaintiffs' filings and reporting; defendants contest all claims; no
+                    liability findings as of January 31, 2026</p>
+
+                <div class="allegation-card" style="grid-column: 1 / -1; margin-bottom: var(--spacing-md);">
+                    <div class="allegation-title">Core Allegation</div>
+                    <p class="allegation-text">Pump.fun secretly integrated Jito MEV tools to enable insiders/affiliates
+                        to front-run retail buys during token launches via Jito bundles and tips. Insiders allegedly
+                        paid tips for priority execution, purchasing tokens at lower prices before public orders, then
+                        selling post-price rise (risk-free arbitrage claimed).</p>
+                </div>
+
+                <div class="allegations-grid">
+                    <div class="allegation-card">
+                        <div class="allegation-title">Coordination Alleged</div>
+                        <p class="allegation-text">Between Pump.fun, Solana Labs/Foundation, and Jito to exploit Solana
+                            mempool/validator infrastructure for MEV extraction</p>
+                    </div>
+
+                    <div class="allegation-card">
+                        <div class="allegation-title">Estimated Losses</div>
+                        <p class="allegation-text">Retail losses tied to these practices estimated in billions ($4–5.5B
+                            aggregate in broader claims)</p>
+                    </div>
+
+                    <div class="allegation-card">
+                        <div class="allegation-title">Marketing Claims</div>
+                        <p class="allegation-text">Platform marketed as "fair" launches while allegedly facilitating
+                            insider advantages through MEV mechanics</p>
+                    </div>
+
+                    <div class="allegation-card">
+                        <div class="allegation-title">Internal Evidence</div>
+                        <p class="allegation-text">Internal chats (5,000+ leaked/referenced December 2025) purportedly
+                            show discussions of MEV tooling integration and bundle usage</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Platform/Defendant Responses -->
+            <section class="content-section">
+                <h3 class="section-label">PLATFORM / DEFENDANT RESPONSES (DOCUMENTED)</h3>
+
+                <div class="mechanics-subsection">
+                    <h4 class="subsection-title">Pump.fun / Associated Parties</h4>
+                    <ul class="mechanics-list">
+                        <li>Deny improper coordination or manipulation</li>
+                        <li>Characterize MEV as standard neutral infrastructure on Solana</li>
+                        <li>Public statements and filings contest claims</li>
+                    </ul>
+                </div>
+
+                <div class="mechanics-subsection">
+                    <h4 class="subsection-title">Jito Labs Position</h4>
+                    <ul class="mechanics-list">
+                        <li>Argued no direct control/relationship with Pump.fun</li>
+                        <li>Provided only open infrastructure (motion to dismiss grounds)</li>
+                        <li>Voluntary plaintiff dismissal obtained</li>
+                    </ul>
+                </div>
+
+                <div class="status-banner status-pending">
+                    <div class="status-banner-label">LEGAL STATUS</div>
+                    <div class="status-banner-text">NO ADMISSIONS OF WRONGDOING — CASE ONGOING WITH MOTIONS PENDING
+                    </div>
+                </div>
+            </section>
+
+            <!-- Uncorroborated Attributes -->
+            <section class="content-section">
+                <h3 class="section-label">UNCORROBORATED / REDACTED ATTRIBUTES</h3>
+                <ul class="redacted-list">
+                    <li class="redacted-item">
+                        <span class="redacted-icon">█</span>
+                        <span class="redacted-text">Full contents/authentication of alleged 5,000+ chat logs
+                            (incorporated per court order; public excerpts limited; whistleblower identity
+                            undisclosed)</span>
+                    </li>
+                    <li class="redacted-item">
+                        <span class="redacted-icon">█</span>
+                        <span class="redacted-text">Specific evidence of Pump.fun team directly using/allocating bundles
+                            for insider trades (alleged but not independently verified in public sources)</span>
+                    </li>
+                    <li class="redacted-item">
+                        <span class="redacted-icon">█</span>
+                        <span class="redacted-text">Quantified MEV extraction directly attributable to Pump.fun launches
+                            (estimates in filings; no on-chain forensic consensus)</span>
+                    </li>
+                    <li class="redacted-item">
+                        <span class="redacted-icon">█</span>
+                        <span class="redacted-text">Any regulatory enforcement (SEC/DOJ) beyond private class action
+                            (none confirmed as of January 31, 2026)</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Source Annotations -->
+            <section class="content-section">
+                <h3 class="section-label">SOURCE ANNOTATIONS</h3>
+                <div class="source-annotations">
+                    <div class="source-item">
+                        <div class="source-number">[1]</div>
+                        <div class="source-details">
+                            <a href="https://unchainedcrypto.com/mev-lawsuit-against-pump-fun-solana-heats-up"
+                                target="_blank" rel="noopener noreferrer" class="source-url">
+                                https://unchainedcrypto.com/mev-lawsuit-against-pump-fun-solana-heats-up
+                            </a>
+                            <div class="source-description">MEV explanation, chat logs incorporation, Jito dismissal
+                            </div>
+                            <div class="source-date">December 19, 2025</div>
+                        </div>
+                    </div>
+
+                    <div class="source-item">
+                        <div class="source-number">[2]</div>
+                        <div class="source-details">
+                            <a href="https://hodder.law/pumpfun-solana-jito-lawsuit-2025" target="_blank"
+                                rel="noopener noreferrer" class="source-url">
+                                https://hodder.law/pumpfun-solana-jito-lawsuit-2025
+                            </a>
+                            <div class="source-description">Amended complaint overview, MEV tooling allegations, $4–5.5B
+                                claims</div>
+                            <div class="source-date">July 22, 2025</div>
+                        </div>
+                    </div>
+
+                    <div class="source-item">
+                        <div class="source-number">[3]</div>
+                        <div class="source-details">
+                            <a href="https://www.courtlistener.com/docket/69593359/aguilar-v-baton-corporation-ltd-dba-pumpfun"
+                                target="_blank" rel="noopener noreferrer" class="source-url">
+                                https://www.courtlistener.com/docket/69593359/aguilar-v-baton-corporation-ltd-dba-pumpfun
+                            </a>
+                            <div class="source-description">Docket; December 9, 2025 order permitting second amended
+                                complaint and evidence</div>
+                        </div>
+                    </div>
+
+                    <div class="source-item">
+                        <div class="source-number">[4]</div>
+                        <div class="source-details">
+                            <a href="https://decrypt.co/331528/solana-pump-fun-amended-rico-suit-alleging-meme-coin-gambling"
+                                target="_blank" rel="noopener noreferrer" class="source-url">
+                                https://decrypt.co/331528/solana-pump-fun-amended-rico-suit-alleging-meme-coin-gambling
+                            </a>
+                            <div class="source-description">RICO/MEV front-running allegations</div>
+                            <div class="source-date">July 23, 2025</div>
+                        </div>
+                    </div>
+
+                    <div class="source-item">
+                        <div class="source-number">[5]</div>
+                        <div class="source-details">
+                            <a href="https://finance.yahoo.com/news/whistleblower-drops-5-000-secret-210125260.html"
+                                target="_blank" rel="noopener noreferrer" class="source-url">
+                                https://finance.yahoo.com/news/whistleblower-drops-5-000-secret-210125260.html
+                            </a>
+                            <div class="source-description">Whistleblower chats reference</div>
+                            <div class="source-date">December 18, 2025</div>
+                        </div>
+                    </div>
+
+                    <div class="source-item">
+                        <div class="source-number">[6]</div>
+                        <div class="source-details">
+                            <a href="https://www.skadden.com/about/news-and-rankings/news/2025/10/crypto-developer-jito-labs-wins-dismissal-of-class-action"
+                                target="_blank" rel="noopener noreferrer" class="source-url">
+                                https://www.skadden.com/about/news-and-rankings/news/2025/10/crypto-developer-jito-labs-wins-dismissal-of-class-action
+                            </a>
+                            <div class="source-description">Jito voluntary dismissal</div>
+                            <div class="source-date">October 2, 2025</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <nav class="file-navigation">
+                <a href="file-005.html" class="nav-button">← PREVIOUS FILE</a>
+                <a href="index.html#files" class="nav-button">RETURN TO FILES</a>
+                <a href="file-007.html" class="nav-button">NEXT FILE →</a>
+            </nav>
+
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-disclaimer">Information compiled from publicly available sources.</p>
+            <p class="footer-disclaimer">This archive is informational only. Technical definitions provided for context;
+                allegations documented herein have not been proven in court.</p>
+            <p class="footer-timestamp">Last updated: January 31, 2026</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
