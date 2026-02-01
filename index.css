@@ -349,29 +349,58 @@ a {
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
 }
 
-.bg-floating-alon {
+.bg-flicker-img {
     width: 600px;
     max-width: 90vw;
     height: auto;
     opacity: 0.15;
-    filter: grayscale(100%);
-    animation: float-slow 8s ease-in-out infinite;
+    filter: grayscale(100%) contrast(1.2);
+    animation: flicker-glitch 4s infinite alternate;
 }
 
-@keyframes float-slow {
+@keyframes flicker-glitch {
 
     0%,
     100% {
-        transform: translateY(0) scale(1);
+        opacity: 0.15;
+        transform: scale(1);
+        filter: grayscale(100%) contrast(1.2);
     }
 
-    50% {
-        transform: translateY(-20px) scale(1.02);
+    33% {
+        opacity: 0.12;
+        transform: scale(1.005);
+    }
+
+    34% {
+        opacity: 0.05;
+        /* Quick flicker dim */
+        filter: grayscale(100%) contrast(2) brightness(1.5);
+        /* Flash */
+    }
+
+    35% {
+        opacity: 0.15;
+        filter: grayscale(100%) contrast(1.2);
+    }
+
+    60% {
+        opacity: 0.15;
+    }
+
+    61% {
+        opacity: 0;
+        /* Brief dropout */
+    }
+
+    62% {
+        opacity: 0.15;
+    }
+
+    90% {
+        transform: scale(1.01);
     }
 }
 
