@@ -406,6 +406,33 @@ a {
     margin-right: auto;
 }
 
+.hero-image-container {
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    justify-content: center;
+}
+
+.hero-floating-image {
+    width: 180px;
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.6));
+    animation: float-vertical 4s ease-in-out infinite;
+    pointer-events: none;
+    /* Just a visual element */
+}
+
+@keyframes float-vertical {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
 .primary-button {
     display: inline-block;
     padding: 1rem 2.5rem;
