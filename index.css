@@ -28,6 +28,8 @@
     /* Layout */
     --max-width: 1200px;
     --nav-height: 90px;
+    --ca-height: 36px;
+    /* Height of the new CA ticker */
 }
 
 /* === RESET & BASE === */
@@ -53,6 +55,49 @@ body {
     position: relative;
     overflow-x: hidden;
     min-height: 100vh;
+}
+
+/* CA BAR STYLES */
+.ca-bar {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    height: var(--ca-height);
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-divider);
+    z-index: 950;
+    /* Below nav (1000) but above content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    backdrop-filter: blur(5px);
+}
+
+.ca-label {
+    color: var(--color-accent);
+    margin-right: 0.75rem;
+    font-weight: 700;
+}
+
+.ca-value {
+    color: var(--color-text-muted);
+    user-select: all;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.ca-value:hover {
+    color: var(--color-text);
+}
+
+/* UPDATE CONTENT MARGINS TO ACCOUNT FOR CA BAR */
+.hero,
+.file-header {
+    margin-top: calc(var(--nav-height) + var(--ca-height)) !important;
 }
 
 /* CRT Scanlines & Vignette Combined */
