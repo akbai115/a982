@@ -3,24 +3,71 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // Smooth scroll for navigation links
-    const navLinks = document.querySelectorAll('a[href^="#"]');
+    // Unified Link Handler with Transitions
+    const handleNavigation = (e) => {
+        const link = e.currentTarget;
+        const href = link.getAttribute('href');
+        const target = link.getAttribute('target');
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
+        // Ignore external links or empty links
+        if (!href || href === '#' || target === '_blank' || href.startsWith('mailto:') || href.startsWith('tel:')) {
+            return;
+        }
 
-            if (targetElement) {
-                const navHeight = document.querySelector('.top-bar').offsetHeight;
-                const targetPosition = targetElement.offsetTop - navHeight - 40;
+        e.preventDefault();
 
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+        const overlay = document.querySelector('.screen-transition-overlay');
+
+        // Start Transition
+        if (overlay) {
+            overlay.classList.remove('exit');
+            overlay.classList.add('active');
+        }
+
+        setTimeout(() => {
+            if (href.startsWith('#')) {
+                // Internal Anchor Scroll
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    const navHeight = document.querySelector('.top-bar').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - navHeight - 40;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'auto' // Instant jump while hidden
+                    });
+
+                    // End Transition
+                    setTimeout(() => {
+                        if (overlay) {
+                            overlay.classList.remove('active');
+                            overlay.classList.add('exit');
+                        }
+                    }, 100);
+                }
+            } else {
+                // Page Navigation
+                window.location.href = href;
+                // Note: The new page will load, so we don't need to manually remove the class 
+                // UNLESS strictly SPA, but here we are navigating to new HTML files.
+                // However, for immediate feedback if the load is fast or cached:
             }
-        });
+        }, 400); // Match CSS transition duration
+    };
+
+    // Attach to all relevant links
+    const allLinks = document.querySelectorAll('a');
+    allLinks.forEach(link => {
+        link.addEventListener('click', handleNavigation);
+    });
+
+    // Handle "Back" navigation for transition reveal
+    window.addEventListener('pageshow', (event) => {
+        const overlay = document.querySelector('.screen-transition-overlay');
+        if (overlay) {
+            overlay.classList.remove('active');
+            overlay.classList.add('exit');
+        }
     });
 
     // Intersection Observer for timeline entries

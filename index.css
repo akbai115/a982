@@ -14,8 +14,9 @@
     --color-divider-subtle: #0f0f0f;
 
     /* Typography */
-    --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    --font-primary: 'JetBrains Mono', 'IBM Plex Mono', monospace;
+    --font-mono: 'JetBrains Mono', 'IBM Plex Mono', monospace;
+    --font-sans: 'JetBrains Mono', 'IBM Plex Mono', monospace;
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -44,7 +45,7 @@ html {
 body {
     background-color: var(--color-bg);
     color: var(--color-text);
-    font-family: var(--font-sans);
+    font-family: var(--font-primary);
     font-size: 16px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -84,6 +85,35 @@ body::after {
     100% {
         background-position: 0 100%, 0 0, 0 0;
     }
+}
+
+/* Screen Transition Overlay */
+.screen-transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg);
+    z-index: 9999;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.screen-transition-overlay.active {
+    transform: scaleY(1);
+    pointer-events: all;
+    transform-origin: bottom;
+}
+
+.screen-transition-overlay.exit {
+    transform: scaleY(0);
+    transform-origin: top;
 }
 
 /* Breathing Glow Behind Hero Title */
@@ -208,14 +238,26 @@ a {
 }
 
 .nav-logo-img {
-    height: 60px;
-    /* Balanced size for 90px header */
+    height: 70px;
+    /* Increased from 60px */
     width: auto;
     display: block;
     object-fit: contain;
     filter: drop-shadow(0 0 5px rgba(139, 58, 58, 0.2));
     /* Subtle glow matching accent */
+    animation: logo-pulse 3s infinite alternate;
 }
+
+@keyframes logo-pulse {
+    0% {
+        filter: drop-shadow(0 0 5px rgba(139, 58, 58, 0.3));
+    }
+
+    100% {
+        filter: drop-shadow(0 0 15px rgba(139, 58, 58, 0.8));
+    }
+}
+
 
 .nav-logo-text-group {
     display: flex;
@@ -375,12 +417,44 @@ a {
     background-color: transparent;
     transition: all 0.3s ease;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
 .primary-button:hover {
     background-color: var(--color-text);
     color: var(--color-bg);
+    animation: button-flicker 0.3s infinite alternate;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 }
+
+@keyframes button-flicker {
+    0% {
+        opacity: 1;
+        transform: skewX(0deg);
+    }
+
+    25% {
+        opacity: 0.8;
+        transform: skewX(2deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: skewX(-2deg);
+    }
+
+    75% {
+        opacity: 0.9;
+        transform: skewX(1deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: skewX(0deg);
+    }
+}
+
 
 /* === DIVIDERS === */
 .section-divider {
