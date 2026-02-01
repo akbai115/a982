@@ -474,6 +474,14 @@ a {
     margin-right: auto;
 }
 
+.hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
 .primary-button {
     display: inline-block;
     padding: 1rem 2.5rem;
@@ -494,6 +502,26 @@ a {
     color: var(--color-bg);
     animation: button-flicker 0.3s infinite alternate;
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.tweet-button {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 1rem;
+    border: 1px solid transparent;
+}
+
+.tweet-button:hover {
+    color: var(--color-text);
+    text-shadow: 0 0 8px rgba(139, 58, 58, 0.8);
+    transform: translateY(-2px);
+    background-color: rgba(139, 58, 58, 0.1);
+    border-color: rgba(139, 58, 58, 0.3);
 }
 
 @keyframes button-flicker {
