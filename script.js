@@ -111,50 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(element);
     });
 
-    // Matrix Code Rain Effect
-    const initMatrixRain = () => {
-        const bg = document.createElement('div');
-        bg.id = 'matrix-bg';
-        document.body.prepend(bg);
-
-        const columns = Math.floor(window.innerWidth / 15);
-        const density = 0.05; // Very low density (only ~5% of possible columns)
-
-        // Allowed characters (Katana + numbers + standard matrix-y glyphs)
-        const chars = 'ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂｵﾘｱﾎﾃﾏｹﾒｴｶｷﾑﾕﾗｾﾈｽﾀﾇﾍ1234567890:・.=*+-<>';
-
-        for (let i = 0; i < columns; i++) {
-            // Only spawn in corners (first 15% and last 15% of screen width)
-            if (i < columns * 0.15 || i > columns * 0.85) {
-                if (Math.random() < density) {
-                    const col = document.createElement('div');
-                    col.className = 'matrix-column';
-
-                    // Randomize string length
-                    let len = Math.floor(Math.random() * 20) + 10;
-                    let str = '';
-                    for (let j = 0; j < len; j++) {
-                        str += chars.charAt(Math.floor(Math.random() * chars.length)) + '<br>';
-                    }
-                    col.innerHTML = str;
-
-                    // Random positioning and timing
-                    col.style.left = (i * 15) + 'px';
-
-                    const duration = Math.random() * 40 + 80; // Slow: 80-120s
-                    col.style.animationDuration = duration + 's';
-
-                    const delay = Math.random() * -100; // Start at random offsets
-                    col.style.animationDelay = delay + 's';
-
-                    bg.appendChild(col);
-                }
-            }
-        }
-    };
-
-    // Initialize Matrix Rain
-    initMatrixRain();
+    // Matrix Rain Removed for PUMPFILES Dossier Aesthetic
+    // const initMatrixRain = () => { ... };
 
     // Update timestamp to current date
     const updateTimestamp = () => {

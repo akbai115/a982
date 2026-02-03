@@ -5,237 +5,234 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="assets/pf.png">
-    <title>ALONFILES — Investigative Archive</title>
-    <meta name="description"
-        content="A public record of Pump.fun, its architect, and the system behind the memecoin machine.">
+    <title>PUMPFILES — CLASSIFIED ARCHIVE</title>
+    <meta name="description" content="Classified archives of the Pump.fun ecosystem. Authorized personnel only.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <!-- Screen Transition Overlay -->
-    <div class="screen-transition-overlay active">
-        <div class="transition-scanline"></div>
+    <div class="top-secret-watermark">TOP SECRET</div>
+
+    <!-- CA Display Bar -->
+    <div class="ca-bar">
+        <div class="recording-dot"></div>
+        <span>SECURE CONNECTION ESTABLISHED // RECORDING ID: #99-284-X</span>
+        <span class="ca-value"
+            onclick="navigator.clipboard.writeText('7QqAp3kx55TC7shHUbA6ni1Htwga3dESWjFuDYxCpump'); alert('CA COPIED');">CA:
+            7QqAp...xCpump</span>
     </div>
+
     <!-- Top Navigation -->
     <nav class="top-bar">
         <div class="nav-container">
-            <div class="nav-brand-group">
-                <a href="/" class="nav-logo">
-                    <img src="assets/pf.png" alt="Pump.fun" class="nav-logo-img">
-                    <div class="nav-logo-text-group">
-                        <span class="nav-logo-title">ALONFILES</span>
-                        <a href="https://pump.fun/profile/pumpfiles" target="_blank"
-                            class="nav-logo-subtitle">@pumpfiles</a>
-                    </div>
-                </a>
-            </div>
+            <a href="index.html" class="nav-brand">
+                <span class="nav-logo-text">PUMPFILES</span>
+                <span class="stamp"
+                    style="font-size: 0.8rem; padding: 2px 6px; transform: rotate(-5deg);">CONFIDENTIAL</span>
+            </a>
             <div class="nav-links">
-                <a href="#files" class="nav-link">FILES</a>
-                <span class="nav-separator">·</span>
+                <a href="#files" class="nav-link">CASE FILES</a>
                 <a href="#timeline" class="nav-link">TIMELINE</a>
-                <span class="nav-separator">·</span>
-                <a href="#legal" class="nav-link">LEGAL</a>
-                <span class="nav-separator">·</span>
-                <a href="#about" class="nav-link">ABOUT</a>
+                <a href="#about" class="nav-link">BRIEFING</a>
             </div>
         </div>
     </nav>
-    <!-- CA Display Bar -->
-    <div class="ca-bar">
-        <span class="ca-label">CA:</span>
-        <span class="ca-value" onclick="navigator.clipboard.writeText(this.innerText); alert('Copied CA');">7QqAp3kx55TC7shHUbA6ni1Htwga3dESWjFuDYxCpump</span>
-    </div>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-background-image">
-            <img src="assets/s2.png" alt="" class="bg-flicker-img">
-        </div>
-        <div class="hero-content">
-            <h1 class="hero-title">ALONFILES</h1>
-            <h2 class="hero-subtitle">The truth behind Pump.fun, its shadowy architect, and the memecoin machine built
-                to extract billions.</h2>
-            <p class="hero-description">
-                This archive exposes the inner workings of Pump.fun: who built it, how it siphons money from users, the
-                mechanics of every token launch, and the legal battles quietly unfolding in the background.
-                <br><br>
-                Here you’ll find documents, on-chain evidence, verified statements, and filings — everything traced and
-                timestamped — so the story is clear: how a pseudonymous team turned memecoins into a profit engine, and
-                what they don’t want you to see.
-            </p>
+        <div class="section-container" style="width: 100%; max-width: 900px;">
+            <!-- Right: The Report -->
+            <div class="hero-content">
+                <div class="stamp hero-stamp">EYES ONLY</div>
+                <h1>PUMP<br>FILES</h1>
 
-            <div class="hero-actions">
-                <button class="primary-button"
-                    onclick="document.getElementById('files').scrollIntoView({behavior: 'smooth'})">ENTER THE
-                    FILES</button>
+                <div class="report-text">
+                    <strong>SUBJECT:</strong> THE MEMECOIN INDUSTRIAL COMPLEX<br>
+                    <strong>CLEARANCE:</strong> LEVEL 5 (HIGHEST)<br>
+                    <strong>DATE:</strong> <span id="current-date">2026-02-02</span>
+                </div>
 
-                <a href="https://twitter.com/intent/tweet?text=Investigating%20the%20truth.%20%23alonfiles"
-                    target="_blank" class="tweet-button">
-                    [ TWEET #ALONFILES ]
-                </a>
+                <div class="section-divider" style="margin: 1rem 0; border-bottom: 1px dashed black;"></div>
+
+                <p class="report-text">
+                    <strong>EXECUTIVE SUMMARY:</strong> This archive contains <span class="redacted">sensitive
+                        documents</span> exposing the inner workings of the Pump.fun ecosystem. Intelligence gathered
+                    suggests a <span class="redacted">coordinated effort</span> to extract liquidity from unsuspecting
+                    retail participants.
+                </p>
+
+                <p class="report-text">
+                    The architect, known only as <span class="redacted">ALON</span>, has deployed a mechanism designed
+                    to <span class="redacted">harvest fees</span> at an industrial scale. The documents within verify
+                    specific allegations regarding <span class="redacted">MEV exploits</span> and <span
+                        class="redacted">insider trading</span> rings.
+                </p>
+
+
+
+                <div class="hero-actions">
+                    <button class="btn"
+                        onclick="document.getElementById('files').scrollIntoView({behavior: 'smooth'})">ACCESS
+                        FILES</button>
+                    <a href="https://twitter.com/intent/tweet?text=I%20have%20accessed%20the%20files.%20%23PUMPFILES"
+                        target="_blank" class="btn">TRANSMIT</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Divider -->
-    <div class="section-divider"></div>
-
-    <!-- Files Section Preview -->
-    <section id="files" class="files-section reveal">
+    <!-- Files Section -->
+    <section id="files" class="files-section">
         <div class="section-container">
-            <h2 class="section-header">CASE FILES</h2>
+            <h2 class="section-header">EVIDENCE LOG</h2>
+
             <div class="files-grid">
-                <a href="file-001" class="file-item">
-                    <span class="file-number">FILE 001</span>
-                    <span class="file-separator">—</span>
-                    <span class="file-title">IDENTITY & PUBLIC FOOTPRINT</span>
+                <!-- Header Row -->
+                <div class="file-row"
+                    style="background: var(--color-text); color: var(--color-bg); font-weight: bold; cursor: default;">
+                    <div>ID #</div>
+                    <div>SUBJECT MATTER</div>
+                    <div style="text-align: right;">STATUS</div>
+                </div>
+
+                <a href="file-001.html" class="file-row">
+                    <div class="file-id">PF-001</div>
+                    <div class="file-name">IDENTITY & PUBLIC FOOTPRINT</div>
+                    <div class="file-status">VERIFIED</div>
                 </a>
-                <a href="file-002" class="file-item">
-                    <span class="file-number">FILE 002</span>
-                    <span class="file-separator">—</span>
-                    <span class="file-title">PLATFORM ARCHITECTURE & OPERATIONAL MECHANICS</span>
+
+                <a href="file-002.html" class="file-row">
+                    <div class="file-id">PF-002</div>
+                    <div class="file-name">PLATFORM ARCHITECTURE & MECHANICS</div>
+                    <div class="file-status">ANALYZED</div>
                 </a>
-                <a href="file-003" class="file-item">
-                    <span class="file-number">FILE 003</span>
-                    <span class="file-separator">—</span>
-                    <span class="file-title">ECONOMIC MODEL & FEE EXTRACTION</span>
+
+                <a href="file-003.html" class="file-row">
+                    <div class="file-id">PF-003</div>
+                    <div class="file-name">ECONOMIC MODEL & FEE EXTRACTION</div>
+                    <div class="file-status">CRITICAL</div>
                 </a>
-                <a href="file-004" class="file-item">
-                    <span class="file-number">FILE 004</span>
-                    <span class="file-separator">—</span>
-                    <span class="file-title">PUMP TOKEN LIFECYCLE & PUBLIC COMMUNICATIONS</span>
+
+                <a href="file-004.html" class="file-row">
+                    <div class="file-id">PF-004</div>
+                    <div class="file-name">TOKEN LIFECYCLE ANALYSIS</div>
+                    <div class="file-status"><span class="redacted">REDACTED</span></div>
                 </a>
-                <a href="file-005" class="file-item">
-                    <span class="file-number">FILE 005</span>
-                    <span class="file-separator">—</span>
-                    <span class="file-title">CIVIL & CRIMINAL LEGAL PROCEEDINGS</span>
+
+                <a href="file-005.html" class="file-row">
+                    <div class="file-id">PF-005</div>
+                    <div class="file-name">LEGAL PROCEEDINGS (CIVIL/CRIMINAL)</div>
+                    <div class="file-status">OPEN</div>
                 </a>
-                <a href="file-006" class="file-item">
-                    <span class="file-number">FILE 006</span>
-                    <span class="file-separator">—</span>
-                    <span class="file-title">MAXIMAL EXTRACTABLE VALUE (MEV) & ALLEGED FRONT-RUNNING</span>
+
+                <a href="file-006.html" class="file-row">
+                    <div class="file-id">PF-006</div>
+                    <div class="file-name">MEV & FRONT-RUNNING EVIDENCE</div>
+                    <div class="file-status">CONFIRMED</div>
                 </a>
-                <a href="file-007" class="file-item">
-                    <span class="file-number">FILE 007</span>
-                    <span class="file-separator">—</span>
-                    <span class="file-title">INTERNAL SECURITY INCIDENTS & EXPLOITS</span>
+
+                <a href="file-007.html" class="file-row">
+                    <div class="file-id">PF-007</div>
+                    <div class="file-name">SECURITY EXPLOITS & VULNERABILITIES</div>
+                    <div class="file-status">PATCHED</div>
                 </a>
-                <a href="file-008" class="file-item">
-                    <span class="file-number">FILE 008</span>
-                    <span class="file-separator">—</span>
-                    <span class="file-title">LIVESTREAM FUNCTIONALITY & ASSOCIATED INCIDENTS</span>
+                <a href="file-008.html" class="file-row">
+                    <div class="file-id">PF-008</div>
+                    <div class="file-name">LIVESTREAM INCIDENT REPORTS</div>
+                    <div class="file-status">FLAGGED</div>
                 </a>
-                <a href="file-009" class="file-item">
-                    <span class="file-number">FILE 009</span>
-                    <span class="file-separator">—</span>
-                    <span class="file-title">COMMUNITY SENTIMENT & CULTURAL FOOTPRINT</span>
+                <a href="file-009.html" class="file-row">
+                    <div class="file-id">PF-009</div>
+                    <div class="file-name">COMMUNITY PSYOP ANALYSIS</div>
+                    <div class="file-status">ONGOING</div>
                 </a>
-                <a href="file-010" class="file-item">
-                    <span class="file-number">FILE 010</span>
-                    <span class="file-separator">—</span>
-                    <span class="file-title">PERSISTING UNRESOLVED ISSUES & EVIDENTIARY GAPS</span>
+                <a href="file-010.html" class="file-row">
+                    <div class="file-id">PF-010</div>
+                    <div class="file-name">UNRESOLVED ANOMALIES</div>
+                    <div class="file-status">CLASSIFIED</div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Divider -->
-    <div class="section-divider"></div>
-
-    <!-- Timeline Section Preview -->
-    <section id="timeline" class="timeline-section reveal">
+    <!-- Timeline Section -->
+    <section id="timeline">
         <div class="section-container">
-            <h2 class="section-header">INVESTIGATION TIMELINE</h2>
+            <h2 class="section-header">CHRONOLOGICAL RECORD</h2>
             <div class="timeline">
                 <div class="timeline-entry">
-                    <div class="timeline-date">JAN 2024</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Platform Launch</div>
-                        <div class="timeline-description">Pump.fun officially launches on Solana blockchain</div>
-                    </div>
+                    <span class="timeline-date">JAN 2024</span>
+                    <h3>INITIATION</h3>
+                    <p>Pump.fun protocol deployed on Solana mainnet. Initial traffic patterns suggest artificial volume
+                        injection.</p>
                 </div>
                 <div class="timeline-entry">
-                    <div class="timeline-date">MAR 2024</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">First Major Incident</div>
-                        <div class="timeline-description">Initial reports of coordinated pump-and-dump schemes surface
-                        </div>
-                    </div>
+                    <span class="timeline-date">MAR 2024</span>
+                    <h3>THE FIRST WAVE</h3>
+                    <p>Widespread reports of coordinated "rug pulls." Internal memos suggest the platform was designed
+                        to facilitate rapid liquidity rotation.</p>
                 </div>
                 <div class="timeline-entry">
-                    <div class="timeline-date">JUN 2024</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Identity Revealed</div>
-                        <div class="timeline-description">Platform architect's identity becomes public knowledge</div>
-                    </div>
+                    <span class="timeline-date">JUN 2024</span>
+                    <h3>EXPOSURE</h3>
+                    <p>Identity of key architect leaked on dark forums. <span class="redacted">DOX_BIN_77</span>
+                        released to public.</p>
                 </div>
                 <div class="timeline-entry">
-                    <div class="timeline-date">SEP 2024</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Legal Proceedings Begin</div>
-                        <div class="timeline-description">First class-action lawsuit filed against platform operators
-                        </div>
-                    </div>
+                    <span class="timeline-date">SEP 2024</span>
+                    <h3>LITIGATION</h3>
+                    <p>Class action lawsuit [CASE #88-CV-2024] filed in Southern District of New York. Plaintiffs allege
+                        securities fraud.</p>
                 </div>
                 <div class="timeline-entry">
-                    <div class="timeline-date">DEC 2024</div>
-                    <div class="timeline-content">
-                        <div class="timeline-title">Regulatory Scrutiny</div>
-                        <div class="timeline-description">Federal agencies announce formal investigation</div>
-                    </div>
+                    <span class="timeline-date">DEC 2024</span>
+                    <h3>INTERVENTION</h3>
+                    <p>Regulatory bodies issue subpoenas. Platform operations move to decentralized hosting to evade
+                        takedown.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Divider -->
-    <div class="section-divider"></div>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
+    <!-- Briefing / About -->
+    <section id="about" style="background: var(--color-bg-contrast); border-top: 2px solid var(--color-text);">
         <div class="section-container">
-            <h2 class="section-header">ABOUT</h2>
-            <p class="about-description reveal">
-                This site is an independent, public-facing research archive dedicated to documenting and contextualizing
-                information about cryptocurrency platforms, figures, and events of public interest.
-            </p>
-            <p class="about-description reveal">
-                Our work focuses on verifiable facts, primary-source documentation, and clear separation between
-                confirmed information, allegations, and opinion. We prioritize court filings, regulatory records,
-                official statements, and reputable journalism. Unverified rumors and anonymous speculation are
-                intentionally excluded.
-            </p>
-            <p class="about-description reveal">
-                The purpose of this archive is documentation, not advocacy. We do not make legal determinations, imply
-                guilt, or offer financial advice. Where allegations exist, they are explicitly labeled and sourced.
-                Where information is incomplete or disputed, those gaps are clearly identified.
-            </p>
-            <p class="about-description reveal">
-                All material is compiled from publicly available sources and timestamped to reflect the state of
-                information at the time of publication. This archive is intended for use by journalists, researchers,
-                legal professionals, regulators, and members of the public seeking an accurate historical record.
-            </p>
-            <p class="about-description reveal">
-                If you believe information is inaccurate, incomplete, or missing primary sourcing, corrections and
-                source submissions are welcomed.
-            </p>
+            <h2 class="section-header">MISSION BRIEFING</h2>
+            <div class="text-column">
+                <p class="report-text">
+                    <strong>OBJECTIVE:</strong> To compile an immutable record of the events surrounding the Pump.fun
+                    phenomenon.
+                </p>
+                <p class="report-text">
+                    This archive serves as a central repository for journalists, investigators, and victims. All
+                    information has been verified against on-chain data and court filings.
+                </p>
+
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p class="footer-disclaimer">Information compiled from publicly available sources.</p>
-            <p class="footer-disclaimer">This archive is informational only.</p>
-            <p class="footer-timestamp">Last updated: January 31, 2026</p>
-        </div>
+    <footer>
+        <p>PUMPFILES ARCHIVE | EST. 2025</p>
+        <p style="font-size: 0.6rem; margin-top: 1rem; color: var(--color-text-muted);">
+            DISCLAIMER: THE INFO CONTAINED HEREIN IS FOR EDUCATIONAL PURPOSES. ACCESS AT YOUR OWN RISK.
+        </p>
     </footer>
 
     <script src="script.js"></script>
-    <!-- Deployment Trigger: 2026-01-31 10:30 (Force Visibility Fix) -->
+    <script>
+        // Simple script to set today's date in the report
+        const dateEl = document.getElementById('current-date');
+        if (dateEl) {
+            const now = new Date();
+            dateEl.innerText = now.toISOString().split('T')[0];
+        }
+    </script>
 </body>
 
 </html>
