@@ -160,6 +160,150 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // Typewriter Effect
+    // Guard against multiple executions (e.g. double script loading)
+    if (window.typewriterInitialized) return;
+    window.typewriterInitialized = true;
+
+    const typeWriterElements = document.querySelectorAll('.typewriter-text');
+
+    function typeWriter(element, speed = 25) {
+        // Clone the element to read its structure and content without modifying the live DOM yet
+        const clone = element.cloneNode(true);
+        // Clear the element
+        element.innerHTML = '';
+        element.style.visibility = 'visible'; // Reveal container
+
+        let currentNodeIndex = 0;
+        let charIndex = 0;
+        const nodes = Array.from(clone.childNodes);
+
+        function typeNode() {
+            if (currentNodeIndex >= nodes.length) {
+                // Done typing
+                element.classList.remove('typing-active');
+                return;
+            }
+
+            const node = nodes[currentNodeIndex];
+
+            if (node.nodeType === Node.TEXT_NODE) {
+                const text = node.textContent;
+                if (charIndex < text.length) {
+                    // Safe append using TextNode to avoid innerHTML re-parsing issues
+                    const char = text.charAt(charIndex);
+                    if (element.lastChild && element.lastChild.nodeType === Node.TEXT_NODE) {
+                        element.lastChild.nodeValue += char;
+                    } else {
+                        element.appendChild(document.createTextNode(char));
+                    }
+
+                    charIndex++;
+                    setTimeout(typeNode, speed);
+                } else {
+                    currentNodeIndex++;
+                    charIndex = 0;
+                    setTimeout(typeNode, speed);
+                }
+            } else if (node.nodeType === Node.ELEMENT_NODE) {
+                // Construct the element in the live DOM
+                const newElement = document.createElement(node.tagName);
+                Array.from(node.attributes).forEach(attr => {
+                    newElement.setAttribute(attr.name, attr.value);
+                });
+
+                element.appendChild(newElement);
+
+                // Recurse
+                typeWriterRecursive(newElement, node, speed, () => {
+                    currentNodeIndex++;
+                    charIndex = 0;
+                    setTimeout(typeNode, speed);
+                });
+            } else {
+                currentNodeIndex++;
+                typeNode();
+            }
+        }
+
+        // Start typing
+        element.classList.add('typing-active');
+        typeNode();
+    }
+
+    // Recursive helper
+    function typeWriterRecursive(targetElement, sourceNode, speed, callback) {
+        const childNodes = Array.from(sourceNode.childNodes);
+        let childIndex = 0;
+        let charIndex = 0;
+
+        function typeChild() {
+            if (childIndex >= childNodes.length) {
+                if (callback) callback();
+                return;
+            }
+
+            const node = childNodes[childIndex];
+
+            if (node.nodeType === Node.TEXT_NODE) {
+                const text = node.textContent;
+                if (charIndex < text.length) {
+                    const char = text.charAt(charIndex);
+
+                    if (targetElement.lastChild && targetElement.lastChild.nodeType === Node.TEXT_NODE) {
+                        targetElement.lastChild.nodeValue += char;
+                    } else {
+                        targetElement.appendChild(document.createTextNode(char));
+                    }
+
+                    charIndex++;
+                    setTimeout(typeChild, speed);
+                } else {
+                    childIndex++;
+                    charIndex = 0;
+                    setTimeout(typeChild, speed);
+                }
+            } else if (node.nodeType === Node.ELEMENT_NODE) {
+                const newElement = document.createElement(node.tagName);
+                Array.from(node.attributes).forEach(attr => {
+                    newElement.setAttribute(attr.name, attr.value);
+                });
+                targetElement.appendChild(newElement);
+
+                typeWriterRecursive(newElement, node, speed, () => {
+                    childIndex++;
+                    setTimeout(typeChild, speed);
+                });
+            } else {
+                childIndex++;
+                typeChild();
+            }
+        }
+
+        typeChild();
+    }
+
+    // Observe and Trigger
+    const typeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                // Double-check global dataset state
+                if (!el.dataset.typed) {
+                    el.dataset.typed = "true";
+                    setTimeout(() => {
+                        typeWriter(el, 15);
+                    }, 200);
+                }
+                typeObserver.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    typeWriterElements.forEach(el => {
+        el.style.visibility = 'hidden';
+        typeObserver.observe(el);
+    });
 });
 
 // Prevent any accidental animations or transitions on page load
